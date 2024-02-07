@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using TMPro;
 
 public class CardManager : MonoBehaviour, IDragHandler, IPointerDownHandler, IPointerUpHandler
 {
@@ -14,6 +15,8 @@ public class CardManager : MonoBehaviour, IDragHandler, IPointerDownHandler, IPo
 
     private GameObject draggingTower;
     private TowerBuilding tower;
+    private int towercost;
+    private EconomyManager economy;
 
     private Vector2Int gridSize = new Vector2Int(50, 50);
     private bool isAllowedtoBuild;
@@ -25,6 +28,7 @@ public class CardManager : MonoBehaviour, IDragHandler, IPointerDownHandler, IPo
     private void Awake()
     {
         //location = new TowerBuilding[gridSize.x, gridSize.y];
+
         LocationController = Location.Instance;
         LocationController.locallocation = new TowerBuilding[gridSize.x, gridSize.y];
         //print("Awake");
@@ -69,11 +73,16 @@ public class CardManager : MonoBehaviour, IDragHandler, IPointerDownHandler, IPo
                     //print("3");
                     isAllowedtoBuild = false;
                 }
-                else
-                {
-                    //print($"Build is allowed " +
-                        //$"x = {x}, z = {z} ");
-                    isAllowedtoBuild = true;
+                else {
+                    //print("4");
+                    if (!GameObject.Find("EconomyManager").GetComponentInChildren<EconomyManager>().DeleteCoin(towercost))
+                    {
+                        //print("4.5");
+                        isAllowedtoBuild = false;
+                    }
+                    else {
+                        //print("5");
+                        isAllowedtoBuild = true; }
                 }
                 draggingTower.transform.position = new Vector3(x, 0, z);
                 tower.SetColor(isAllowedtoBuild);
@@ -87,6 +96,8 @@ public class CardManager : MonoBehaviour, IDragHandler, IPointerDownHandler, IPo
         draggingTower = Instantiate(towerCard.prefab, Vector3.zero, Quaternion.identity);
 
         tower = draggingTower.GetComponent<TowerBuilding>();
+
+        towercost = towerCard.cost;
 
         var groundPlane = new Plane(Vector3.up, Vector3.zero);
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -110,6 +121,7 @@ public class CardManager : MonoBehaviour, IDragHandler, IPointerDownHandler, IPo
         {
             LocationController.locallocation[(int)draggingTower.transform.position.x, (int)draggingTower.transform.position.z] = tower;
             tower.ResetColor();
+            GameObject.Find("EconomyManager").GetComponentInChildren<EconomyManager>().SpendCoin(towercost);
             //print($"dragging x = {(int)draggingTower.transform.position.x}, dragging z = {(int)draggingTower.transform.position.z}");
             //location[(int) draggingTower.transform.position.x, (int) draggingTower.transform.position.z] = tower;
         } 
