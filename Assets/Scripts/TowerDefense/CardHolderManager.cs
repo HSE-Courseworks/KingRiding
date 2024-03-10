@@ -44,12 +44,12 @@ public class CardHolderManager : MonoBehaviour
         Transform Childrens = newcard.GetComponentInChildren<Transform>();
         foreach (Transform children in Childrens)
         {
-            if (children.gameObject.name == "Icon")
+            if (children.gameObject.name == "icon")
             {
                 children.GetComponentInChildren<Image>().sprite = icon;
             }
         }
-        newcard.GetComponentInChildren<SpriteRenderer>().sprite = icon;
+        //newcard.GetComponentInChildren<SpriteRenderer>().sprite = icon;
         newcard.GetComponentInChildren<TMP_Text>().text = cost.ToString();
     }
 }
