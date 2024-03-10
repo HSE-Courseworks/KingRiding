@@ -18,16 +18,14 @@ public class CardManager : MonoBehaviour, IDragHandler, IPointerDownHandler, IPo
     private int towercost;
     private EconomyManager economy;
 
-    private Vector2Int gridSize = new Vector2Int(50, 50);
+    private Vector2Int gridSize = new Vector2Int(53, 53);
     private bool isAllowedtoBuild;
 
-    //private TowerBuilding[,] location;
 
     private Location LocationController;
 
     private void Awake()
     {
-        //location = new TowerBuilding[gridSize.x, gridSize.y];
 
         LocationController = Location.Instance;
         LocationController.locallocation = new TowerBuilding[gridSize.x, gridSize.y];
@@ -48,7 +46,7 @@ public class CardManager : MonoBehaviour, IDragHandler, IPointerDownHandler, IPo
                 int x = Mathf.RoundToInt(mapPosition.x);
                 int z = Mathf.RoundToInt(mapPosition.z);
 
-                if (x < 0 || x > gridSize.x - tower.TowerSize.x)
+                if (x < 1 || x > gridSize.x-2 - tower.TowerSize.x)
                 {
                     isAllowedtoBuild = false;
                     //print($"Error: 1 " +
@@ -58,7 +56,7 @@ public class CardManager : MonoBehaviour, IDragHandler, IPointerDownHandler, IPo
                     //    $"gridSize.x - TowerSize.x = {gridSize.x - tower.TowerSize.x}");
 
                 }
-                else if (z < 0 || z > gridSize.y - tower.TowerSize.y)
+                else if (z < 1 || z > gridSize.y-2 - tower.TowerSize.y)
                 {
                     //print($"Error: 2 " +
                     //    $"z = {z} " +
@@ -119,7 +117,9 @@ public class CardManager : MonoBehaviour, IDragHandler, IPointerDownHandler, IPo
             Destroy(draggingTower);
         else
         {
-            LocationController.locallocation[(int)draggingTower.transform.position.x, (int)draggingTower.transform.position.z] = tower;
+
+            LocationInstaller();
+            
             tower.ResetColor();
             GameObject.Find("EconomyManager").GetComponentInChildren<EconomyManager>().SpendCoin(towercost);
             //print($"dragging x = {(int)draggingTower.transform.position.x}, dragging z = {(int)draggingTower.transform.position.z}");
@@ -129,8 +129,18 @@ public class CardManager : MonoBehaviour, IDragHandler, IPointerDownHandler, IPo
 
     private bool IsTerritoryOccupied(int x, int y)
     {
-        if (LocationController.locallocation[x, y] != null)
+        if (LocationController.locallocation[x, y])
             return true;
         return false;
+    }
+    private void LocationInstaller()
+    {
+        for (int i = -2; i <= 2; i++) {
+             for (int j = -2; j <=2; j++)
+            {
+                if ((int)draggingTower.transform.position.x + i >= 0 && (int)draggingTower.transform.position.z + j >= 0)
+                    LocationController.locallocation[(int)draggingTower.transform.position.x+i, (int)draggingTower.transform.position.z+j] = tower;
+            }
+        }
     }
 }
