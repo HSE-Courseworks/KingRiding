@@ -8587,16 +8587,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95b2be5b911d3094e9bfd377bde7bc33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Window: {fileID: 0}
-  text: {fileID: 0}
-  firstAnswer: {fileID: 0}
-  secondAnswer: {fileID: 0}
-  thirdAnswer: {fileID: 0}
-  firstButton: {fileID: 0}
-  secondButton: {fileID: 0}
-  thirdButton: {fileID: 0}
+  Window: {fileID: 2139956002}
+  text: {fileID: 1416940033}
+  firstAnswer: {fileID: 1534894978}
+  secondAnswer: {fileID: 1208183059}
+  thirdAnswer: {fileID: 317582766}
+  firstButton: {fileID: 132932596}
+  secondButton: {fileID: 646031987}
+  thirdButton: {fileID: 2054477596}
   dialogueEnded: 0
-  DialogueXML: {fileID: 0}
+  DialogueXML: {fileID: 4900000, guid: a1b6da8ab56e44343816de55b127db14, type: 3}
   currentNode: 0
   butClicked: 0
 --- !u!1 &567654479
@@ -9164,16 +9164,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95b2be5b911d3094e9bfd377bde7bc33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Window: {fileID: 0}
-  text: {fileID: 0}
-  firstAnswer: {fileID: 0}
-  secondAnswer: {fileID: 0}
-  thirdAnswer: {fileID: 0}
-  firstButton: {fileID: 0}
-  secondButton: {fileID: 0}
-  thirdButton: {fileID: 0}
+  Window: {fileID: 2139956002}
+  text: {fileID: 1416940033}
+  firstAnswer: {fileID: 1534894978}
+  secondAnswer: {fileID: 1208183059}
+  thirdAnswer: {fileID: 317582766}
+  firstButton: {fileID: 132932596}
+  secondButton: {fileID: 646031987}
+  thirdButton: {fileID: 2054477596}
   dialogueEnded: 0
-  DialogueXML: {fileID: 0}
+  DialogueXML: {fileID: 4900000, guid: 65423905723b9da45919bbae064257f6, type: 3}
   currentNode: 0
   butClicked: 0
 --- !u!1 &603090808
@@ -16398,6 +16398,7 @@ GameObject:
   - component: {fileID: 908884327}
   - component: {fileID: 908884326}
   - component: {fileID: 908884328}
+  - component: {fileID: 908884329}
   m_Layer: 0
   m_Name: iron_mine
   m_TagString: Untagged
@@ -16529,21 +16530,56 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40e0587e0855e86429607ae0f671fe10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Genus1: 
-  NumberOfGenus1: 
-  Genus2: 
-  NumberOfGenus2: 
-  Genus3: 
-  NumberOfGenus3: 
-  MineWindow: {fileID: 0}
-  Type1: {fileID: 0}
-  Type2: {fileID: 0}
-  Type3: {fileID: 0}
-  Number1: {fileID: 0}
-  Number2: {fileID: 0}
-  Number3: {fileID: 0}
-  AddButton: {fileID: 0}
-  TextInfo: {fileID: 0}
+  Genus1: "\u0416\u0435\u043B\u0435\u0437\u0430"
+  NumberOfGenus1: 100
+  Genus2: "\u0417\u043E\u043B\u043E\u0442\u0430"
+  NumberOfGenus2: 100
+  Genus3: "\u041F\u0438\u0432\u0430"
+  NumberOfGenus3: 100
+  MineWindow: {fileID: 180115874}
+  Type1: {fileID: 1411116368}
+  Type2: {fileID: 1250481085}
+  Type3: {fileID: 1372472813}
+  Number1: {fileID: 2010713925}
+  Number2: {fileID: 21652697}
+  Number3: {fileID: 941668754}
+  AddButton: {fileID: 1019148013}
+  TextInfo: {fileID: 891350179}
+--- !u!58 &908884329
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 908884324}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.45
 --- !u!1 &912089308
 GameObject:
   m_ObjectHideFlags: 0
@@ -23763,6 +23799,7 @@ GameObject:
   - component: {fileID: 1174194435}
   - component: {fileID: 1174194434}
   - component: {fileID: 1174194437}
+  - component: {fileID: 1174194438}
   m_Layer: 0
   m_Name: tree_mine
   m_TagString: Untagged
@@ -23894,21 +23931,56 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40e0587e0855e86429607ae0f671fe10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Genus1: 
-  NumberOfGenus1: 
-  Genus2: 
-  NumberOfGenus2: 
-  Genus3: 
-  NumberOfGenus3: 
-  MineWindow: {fileID: 0}
-  Type1: {fileID: 0}
-  Type2: {fileID: 0}
-  Type3: {fileID: 0}
-  Number1: {fileID: 0}
-  Number2: {fileID: 0}
-  Number3: {fileID: 0}
-  AddButton: {fileID: 0}
-  TextInfo: {fileID: 0}
+  Genus1: "\u0414\u0435\u0440\u0435\u0432\u0430"
+  NumberOfGenus1: 100
+  Genus2: "\u0427\u0435\u0441\u0442\u0438"
+  NumberOfGenus2: 0
+  Genus3: "\u041F\u0438\u0432\u0430"
+  NumberOfGenus3: 0
+  MineWindow: {fileID: 180115874}
+  Type1: {fileID: 1411116368}
+  Type2: {fileID: 1250481085}
+  Type3: {fileID: 1372472813}
+  Number1: {fileID: 2010713925}
+  Number2: {fileID: 21652697}
+  Number3: {fileID: 941668754}
+  AddButton: {fileID: 1019148013}
+  TextInfo: {fileID: 891350179}
+--- !u!58 &1174194438
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1174194433}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 4
 --- !u!1 &1200712574
 GameObject:
   m_ObjectHideFlags: 0
@@ -45465,8 +45537,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 485426e980e140f4a907987b5ca4ee5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  InventoryInfoWindow: {fileID: 0}
-  TextInfo: {fileID: 0}
+  InventoryInfoWindow: {fileID: 1046087382}
+  TextInfo: {fileID: 891350179}
 --- !u!1 &2104685740
 GameObject:
   m_ObjectHideFlags: 0
