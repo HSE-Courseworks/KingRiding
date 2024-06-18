@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c09d8f340649d0543889263c2ee9356c, type: 3}
   m_Name: FrozenTower
   m_EditorClassIdentifier: 
-  icon: {fileID: 21300000, guid: 8f6d58fd471ba8a45a4b681953e29c26, type: 3}
+  icon: {fileID: 21300000, guid: de4b94adc4e298b4e9126688cf8552dd, type: 3}
   prefab: {fileID: 8466153237009473768, guid: 69dac8a51a1e48f44975a1e4845dadf1, type: 3}
   cost: 15
