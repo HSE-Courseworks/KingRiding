@@ -7,13 +7,16 @@ TagManager:
   - Enemy
   - FxTemporaire
   - Tower
+
   - WayPoint
   - SwanerTd
+  - platform
+
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Towers
   - Water
   - UI
   - 
