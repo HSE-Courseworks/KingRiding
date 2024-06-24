@@ -76,7 +76,7 @@ public class Mine : MonoBehaviour
     }
     public void OnTriggerExit2D(Collider2D other)
     {
-        MineWindow.SetActive(false);
+        // MineWindow.SetActive(false);
         set_active = false;
         AddButton.onClick.RemoveListener(but1);
         inCollider = false;
